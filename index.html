@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>ProductShot</title>
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/dropzone.min.css" rel="stylesheet">
+    <link href="css/bootstrap-colorpicker.min.css" rel="stylesheet">
+    <link href="css/base-style.css" rel="stylesheet">
+  </head>
+
+  <body class="d-flex flex-column h-100">
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-4 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active ps-brand" href="#">
+                  ProductShot
+                </a>
+              </li>
+            </ul>
+            <form>
+              <div class="row">
+                <div id="dropzone" class="dropzone-lg">
+                  <p id="initial">Drop your screenshot or click to upload it</p>
+                </div>
+              </div>
+              <div id="form-block">
+                <div class="form-row">
+                  <div class="form-group col-md-2">
+                    <label for="color" class="">Color</label>
+                    <div class="input-group" id="color-picker">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text colorpicker-input-addon" id=""><i></i></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-10">
+                    <label for="" class="hidden-hack">Color</label>
+                    <div class="input-group">
+                      <input type="text" class="form-control form-control" id="color" placeholder="e.g. #bada55">
+                      <div class="input-group-append">
+                        <div class="input-group-text">
+                          <input type="checkbox" value="true" id="transparent-checkbox">
+                          <label for="transparent-checkbox"><small>&nbsp; Transparent</small></label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-5">
+                    <label for="color" class="">Shadow: &nbsp;<span id="shadow-size">5</span></label>
+                    <div class="input-group input-range">
+                      <input type="range" class="form-control-range" name="shadow-range" id="formControlRange" max="10" value="5" min="0">
+                    </div>
+
+                  </div>
+                  <div class="form-group col-md-3 text-right">
+                    <label for="" class="hidden-hack">Shadow</label>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-secondary active">
+                        <input type="radio" name="shadow-blur" value="20" autocomplete="off" checked>Blur
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="shadow-blur" value="0" autocomplete="off">Solid
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group col-md-4 text-right">
+                    <label for="" class="hidden-hack">Shadow</label>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-secondary active">
+                        <input type="radio" name="shadow-position" value="-1" autocomplete="off" checked> L
+                      </label>
+                      <label class="btn btn-secondary" id="radio-center">
+                        <input type="radio" name="shadow-position" value="0" autocomplete="off"> C
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="shadow-position" value="1" autocomplete="off"> R
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-8">
+                    <label for="mockup" class="">Screen type</label>
+                    <select class="form-control custom-select" id="mockup">
+                      <!-- <option value="" data-border-rad="50">None</option> -->
+                      <option value="img/browser-macos-no-url.svg" selected data-border-rad="20">MacOS window</option>
+                      <option value="img/browser-macos-with-url.svg" selected data-border-rad="20">MacOS browser</option>
+                      <option value="img/browser-macos-dark-mode.svg" selected data-border-rad="20">MacOS dark mode</option>
+                      <option value="img/browser-windows-w-url.svg" selected data-border-rad="10">Windows browser</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-8">
+                    <label for="magnifier" class="">Magnifier</label>
+                    <select class="form-control custom-select" id="magnifier">
+                      <option value="">None</option>
+                      <option value="normal" selected>Normal</option>
+                      <option value="silver" disabled>Silver (Coming soon)</option>
+                      <option value="transparent" disabled>Transparent border (Coming soon)</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row form-row-compact" id="magnifier-settings">
+                  <div class="form-group col-md-6">
+                    <label for="color"><small>Size: &nbsp;<span id="magnifier-size">150</span></small></label>
+                    <div class="input-group input-range">
+                      <input type="range" class="form-control-range" name="magnifier-size" max="500" value="150" min="100" step="50">
+                    </div>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="color"><small>Scale: &nbsp;<span id="magnifier-scale">2.5</span></small></label>
+                    <div class="input-group input-range">
+                      <input type="range" class="form-control-range" name="magnifier-scale" max="5" value="2.5" min="1" step="0.5">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-8">
+                    <label for="download-type" class="">Download</label>
+                    <select class="form-control custom-select" id="download-type">
+                      <option value="png" selected="">PNG</option>
+                      <option value="jpeg">JPG</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="" class="hidden-hack">Download</label>
+                    <a href="#" id="download" class="btn btn-primary btn-block">Donwload</a>
+                  </div>
+                </div>
+              </div>
+              <img id="mockupImg" class="d-none" src="img/chrome_low.png">
+            </form>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-8 ml-sm-auto col-lg-8 px-4">
+          <canvas class="mt-4" id="canvas" width="800" height="600"></canvas>
+        </main>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.4.0/fabric.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/dropzone.min.js"></script>
+    <script src="js/bootstrap-colorpicker.min.js"></script>
+    <script src="js/fabricis.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,168 @@
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.footer {
+  background-color: #f5f5f5;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+canvas{
+  width:100%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ddd;
+}
+
+.canvas-container {
+  margin: 50px auto;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  padding: 0; /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+.sidebar .nav-item {
+  font-weight: 300;
+  color: #333;
+}
+
+.sidebar .nav-text {
+  display: block;
+  padding: .5rem 1rem;
+  color: #666;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #999;
+}
+
+.sidebar .nav-link.active {
+  color: #007bff;
+}
+
+.sidebar .nav-link.ps-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+}
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #999;
+}
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+.sidebar .form-row {
+  padding: 0 15px;
+}
+
+.sidebar #form-block {
+  display: none;
+  padding-top:15px;
+  border-top: solid thin #ddd;
+  padding-bottom:25px;
+  border-bottom: solid thin #ddd;
+}
+
+#dropzone {
+  border: solid thin #007bff;
+  background-color: #fafafa;
+  width:100%;
+  vertical-align: center;
+  cursor: pointer;
+}
+
+#dropzone.dropzone-lg {
+  padding: 100px 30px;
+}
+
+#dropzone.dropzone-sm {
+  padding: 30px;
+}
+
+#dropzone p#initial {
+  margin: 0 auto;
+  color: #999;
+}
+
+#dropzone .dz-image, #dropzone .dz-details .dz-size, #dropzone .dz-success-mark, #dropzone .dz-error-mark {
+  display:none;
+}
+
+.input-group-text.colorpicker-input-addon {
+  padding:10px;
+}
+
+.input-group > .input-group-prepend > .input-group-text {
+  border-radius: 0.25rem;
+}
+
+.hidden-hack {
+  color: #f8f9fa;
+}
+
+.input-group.input-range {
+  margin-top: 10px;
+  padding-right:15px;
+}
+
+.input-group-text label {
+  margin-bottom: 0;
+}
+
+.input-group.input-settings {
+  padding: 7px 10px;
+}
+
+label #shadow-size {
+  color: #007bff;
+}
+
+img#mockupImg {
+  display:none;
+}
+
+.form-row.form-row-compact label, .form-row.form-row-compact .input-group.input-range{
+  margin: 0;
+}
+
+.form-row#magnifier-settings {
+  display: none;
+}
+
